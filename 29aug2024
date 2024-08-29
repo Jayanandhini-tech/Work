@@ -1,0 +1,43 @@
+29/08/2024
+Install and configure Nginx
+Nginx (pronounced as “Engine-X”) is an open source web server that is often used as reverse proxy or HTTP cache. It is available for Linux for free.
+Installing Nginx
+	sudo apt update
+	sudo apt install nginx
+	cd /var/www
+	sudo mkdir tutorial
+	cd tutorial
+	sudo nano (filename.html)
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+	   <title>Hello, Nginx!</title>
+</head>
+<body>
+    <h1>Hello, Nginx!</h1>
+    <p>We have just configured our Nginx web server on Ubuntu Server!</p>
+</body>
+</html>
+Setting up virtual host
+	cd /etc/nginx/sites-enabled
+	sudo nano (filename)
+server {
+       listen 81;
+       listen [::]:81;
+
+       server_name example.ubuntu.com;
+
+       root /var/www/tutorial;
+       index index.html;
+
+       location / {
+               try_files $uri $uri/ =404;
+       }
+}
+
+Activating virtual host and testing results
+
+	sudo service nginx restart 
+	sudo service nginx status
+
