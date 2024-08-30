@@ -1,0 +1,22 @@
+30/08/2024
+AWS cli reference : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-source-install.html#source-getting-started-install-reqs
+What to create access key and secret key in AWS
+Local ubuntu
+	aws ec2 describe-security-groups --group-names Myteam
+	aws ec2 describe-security-groups --group-ids sg-0b34988a69dd4e056
+	aws ec2 run-instances --image-id ami-0522ab6e1ddcc7055 --count 1 --instance-type t2.micro --key-name test --security-groups Myteam
+	aws ec2 run-instances --image-id ami-0522ab6e1ddcc7055 --count 1 --instance-type t2.micro --key-name test --security-group-ids sg-0b34988a69dd4e056
+	aws configure
+	aws ec2 describe-key-pairs
+How many instances created? In AWS can show this query.
+	aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,KeyName,State.Name]" --output table
+	aws ec2 start-instances --instance-ids i-0d73abd35ab379a35
+	aws ec2 stop-instances --instance-ids i-0d73abd35ab379a35
+	aws ec2 terminate-instances --instance-ids i-0d73abd35ab379a35
+	create-key-pair --key-name computer --query 'KeyMaterial' --output text > computer.pem
+	aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,KeyName,State.Name]" --output table
+	aws ec2 create-key-pair --key-name cpu --query 'KeyMaterial' --output text > cpu.pem
+	chmod 400 cpu.pem
+DELETE key pair in local ubuntu
+	key pair available check(aws ec2 describe-key-pairs)
+	aws ec2 delete-key-pair --key-name (filename)
