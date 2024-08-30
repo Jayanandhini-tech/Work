@@ -1,0 +1,18 @@
+Github Notes 
+	git clone https://github.com/Jayanandhini-tech/Work-.git
+	Go to inside the folder cd ..(change the directory)
+	git status (if not file name recognised means)
+	git add (filename)
+	Again Check Status (git status) if committed means color Green
+	git commit -m "Daily Work" (-m means message u should give)
+	git push origin main (it will not Work)
+	git remote set-url origin https://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@github.com/Jayanandhini-tech/Work-.git  
+	(Above URl taken from  git hub) 
+	First go to settings
+	Scroll down (developer setting)
+	Click personal access token 
+	Click token (classic)
+	Click generate new token (click all check box)
+	Click create token
+	Then set URL 
+	git push origin main
