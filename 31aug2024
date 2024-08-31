@@ -1,0 +1,27 @@
+31/08/2024 (visual code dashboard)
+	cd CMS-Dashboard-master
+	cd src ( port number change 5000)
+	cd environments
+	run your program using Ionic serve
+(Dotnet code)
+	mkdir Appmaster
+	cp -r "/mnt/d/Dot net/CMS-App-master/API/bin/Debug/net8.0" ~/Appmaster/API
+	mkdir Appmaster
+	cd Appmaster
+	mkdir API
+	mkdir DTO
+	cd Appmaster
+	ls
+	cp -r "/mnt/d/Dot net/CMS-App-master/API/bin/Debug/net8.0" ~/Appmaster/API/
+	cp -r "/mnt/d/Dot net/CMS-App-master/DTO/bin/Debug/net8.0" ~/Appmaster/DTO/
+	ls
+	cd API
+	cd net8.0
+	dotnet --version
+	 cd API
+	 ls
+	 cd APPmaster
+	 cd Appmaster
+	 cd API
+	 cd net8.0
+	 dotnet CMS.API.dll
