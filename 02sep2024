@@ -1,0 +1,37 @@
+02/09/2024
+	To completely remove nginx and its configuration files from your system, follow these steps:
+1. Stop Nginx Service
+sudo systemctl stop nginx
+     2. Remove Nginx Package
+sudo apt-get purge nginx nginx-common nginx-full
+    3. Remove Configuration Files and Directories
+sudo rm -rf /etc/nginx
+sudo rm -rf /var/log/nginx
+sudo rm -rf /var/cache/nginx
+4. Remove Any Remaining Files and Directories
+	sudo rm -rf /usr/share/nginx
+sudo rm -rf /usr/lib/nginx
+sudo rm -rf /var/www/html
+5. Remove Nginx User and Group
+If nginx created a dedicated user and group, you can remove them as well:
+bash
+Copy code
+sudo deluser --remove-home nginx
+sudo delgroup nginx
+6. Update Package List
+Update your package list to ensure it's up-to-date:
+bash
+Copy code
+sudo apt-get update
+7. Clean Up
+sudo apt-get autoremove
+Dashboard Ubuntu dotnet core project
+
+	sudo mkdir -p /var/www/dashboard
+	ls
+	cd /var/www/dashboard 
+	sudo cp -r ~/CMS-Dashboard-master/CMS-Dashboard-master/www/* /var/www/dashboard/
+	sudo nano /etc/nginx/sites-available/dashboard.jaya.com
+	jaya-tech@Software1:/var/www/dashboard$ : ls
+(3rdpartylicenses.txt  browser- solution)
+	sudo nano /etc/nginx/sites-available/dashboard.jaya.com
