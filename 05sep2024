@@ -1,0 +1,51 @@
+03/09/2024
+Prompt:
+The root@ prefix indicates that you have root (administrator) access, and you should be cautious with the commands you execute, as they can affect the entire system
+Create Instance in EC2
+aws ec2 describe-security-groups --group-names Myteam
+aws ec2 describe-security-groups --group-ids sg-0b34988a69dd4e056
+aws ec2 run-instances --image-id ami-0522ab6e1ddcc7055 --count 1 --instance-type t2.micro --key-name test --security-group-ids sg-0b34988a69dd4e056
+aws configure
+aws ec2 describe-key-pairs
+ssh -i "cpu.pem" ubuntu@ec2-15-207-19-214.ap-south-1.compute.amazonaws.com
+inbound 
+ec2-security group – edit -custom –anywhere-  ip-0.0.0.0 – save rules
+------------------------------------------------------------------------------------------------
+sudo su
+cd /etc/mysql/mysql.conf.d
+root@ip-172-31-1-130:/home/ubuntu# cd /etc/mysql/mysql.conf.d
+ls
+mysql.cnf  mysqld.cnf  mysqld.cnf.save
+root@ip-172-31-1-130:/etc/mysql/mysql.conf.d# sudo nano mysqld.cnf.save
+sudo nano mysqld.cnf
+command prompt  change 
+bind-address            = 0.0.0.0
+mysqlx-bind-address     = 0.0.0.0
+systemctl restart mysql.service
+sudo mysql
+mysql -u root -p
+CREATE USER 'bvc'@'localhost' IDENTIFIED BY 'bvc24';
+GRANT ALL PRIVILEGES ON *.* TO 'bvc'@'localhost';
+FLUSH PRIVILEGES;
+DROP USER 'bvc'@'localhost'; if necessary
+	Appmaster dotnet project:
+	ls /mnt
+	cd /mnt/d
+	ls /cd 'Dot net' / ls
+	CMS-App-master  CMS-Dashboard-master
+	/mnt/d/Dot net$ cd CMS-App-master
+	/mnt/d/Dot net/CMS-App-master$ ls
+	API  BVC-CMS.sln  DTO  VM
+	/mnt/d/Dot net/CMS-App-master$ cd API
+	/mnt/d/Dot net/CMS-App-master/API$ ls
+	BVC-API-CMS.http  Controllers  Extensions  Middlewares  Program.cs  Services                     appsettings.json  obj
+	CMS.API.csproj    Domains      Hubs        Migrations   Properties  UPIKit.dll                   bin
+	Certificates      Dtos         Images      Payments     Repository  appsettings.Production.json  log4net.config
+	jaya-tech@Software1:/mnt/d/Dot net/CMS-App-master/API$ sudo nano appsettings.json 
+	"DefaultConnection": "server=13.201.230.26; port=3306; database=bvccms; user=bvc; password=bvc24;" (change public ip address)
+Run dashboard
+	Cd CMS-Dashboard-master -ionic serve
+Important 
+	Dashboard only communicate with API (ip should fix src-environment – sudo nano and fix ip address to API here you give dashboard ip address)
+	API communicate with mysql 
+(should check appsettings.json ip address want to change here you give ec2 public ip-address)
