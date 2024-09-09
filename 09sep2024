@@ -1,0 +1,39 @@
+Postman Endpoint Testing
+#  http://localhost:5095/api/accounts/login
+new 
+{
+  "Username": "siva@bvc24.com",
+  "Password": "S!va.BVC@1"
+}
+content-type - application\json
+{
+    "jwtToken": Bearer  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNpdmFAYnZjMjQuY29tIiwiVmVuZG9ySWQiOiIxIiwiQXBwVHlwZSI6IlBPUyIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTcyNTg3NDIzMCwiZXhwIjoxNzI1ODc2MDMwLCJpYXQiOjE3MjU4NzQyMzB9.apMBXtITNnxNmiZgu9uZEdwt12R8P0_f1cvnlUnKfxk",
+    "refreshToken": "6670122d-fc59-41b4-a917-a9c3787a728a",
+    "expired": "2024-09-09T15:30:30.5410903+05:30"
+}
+post : http://localhost:5095/api/accounts/register
+{
+  "Email": "demo@bvc.com",
+  "Password": "Bvc!@#123!",
+  "VendorId": "1",
+  "Role": "User"  
+}
+Result:
+{
+    "message": "User created successfully"
+}
+
+
+
+{
+Bearer  
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNpdmFAYnZjMjQuY29tIiwiVmVuZG9ySWQiOiIxIiwiQXBwVHlwZSI6IlBPUyIsInJvbGUiOiJBZG1pbiIsIm5iZiI6MTcyNTg4MTM1MSwiZXhwIjoxNzI1ODgzMTUxLCJpYXQiOjE3MjU4ODEzNTF9.KtKOgB4bvSql6Zbs7SBzzGyEWSZ643vVkY71o4XUcUA
+    "refreshToken": "d6f24709-2c62-4c4f-9171-7166fd64a529",
+    "expired": "2024-09-09T17:29:11.582715+05:30"
+}
+
+
+
+
+
+
