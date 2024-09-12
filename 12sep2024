@@ -1,0 +1,31 @@
+def getsolution():
+   
+    pair_count = 0
+    max_pairs = 5 
+
+    while pair_count < max_pairs:
+       
+        input_string = input("Enter two words separated by space: ")
+        
+        words = input_string.split()
+        
+        if len(words) != 2:
+            print("Error: Please enter exactly two words.")
+            continue
+        
+     
+        word1, word2 = words
+        
+        
+        if sorted(word1) == sorted(word2):
+            print(f"{word1} {word2} true")
+        else:
+            print(f"{word1} {word2} false")
+        
+    
+        pair_count += 1
+
+    print("Finished checking 5 pairs.")
+
+
+getsolution()
